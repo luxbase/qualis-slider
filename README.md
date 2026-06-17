@@ -141,4 +141,4 @@ Pin a specific version for production environments:
 
 Each widget includes a `qualis.studio` badge in the bottom-right corner. We appreciate keeping it visible — it's the only mechanism that keeps this widget free and sustainable.
 
-Built by [Qualis Studio](https://qualis.studio) — Asunción, Paraguay. MIT License.
+Built by [Qualis Studio](https://luxbase.github.io/qs/es/) — Asunción, Paraguay. MIT License.
