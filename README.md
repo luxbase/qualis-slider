@@ -11,7 +11,7 @@
 <h1 align="center">Qualis Slider</h1>
 
 <p align="center">
-  A lightweight, dependency-free **before & after** image comparison widget built for real estate portals. <br>
+  A lightweight, dependency-free before & after image comparison widget built for real estate portals. <br>
   ~4 KB gzipped · Zero dependencies · Drop-in via two lines of HTML.
 </p>
 
