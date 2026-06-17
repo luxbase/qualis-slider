@@ -86,6 +86,7 @@
 
     var clip = document.createElement('div');
     clip.className = 'qs-clip';
+    clip.style.clipPath = 'inset(0 0 0 50%)';
     var imgA = makeImg(after);
     clip.appendChild(imgA);
 

@@ -1,42 +1,48 @@
+<p align="center">
+  <a href="https://luxbase.github.io/qualis-slider/">
+    <img src="https://img.shields.io/badge/demo-live-1D9E75?style=flat-square" alt="Demo">
+  </a>
+  <img src="https://img.badges.size.io/github/raw/luxbase/qualis-slider/main/dist/widget.js?style=flat-square&label=size&color=1D9E75" alt="Size">
+  <img src="https://img.shields.io/badge/dependencies-none-1D9E75?style=flat-square" alt="Dependencies">
+  <img src="https://img.shields.io/npm/l/qualis-slider?style=flat-square&color=1D9E75" alt="License">
+</p>
+
 # qualis-slider
 
-Widget de comparación **Antes / Después** para portales inmobiliarios. Desarrollado por [Qualis Studio](https://qualis.studio).
+Widget de comparación visual **Original vs. Staging** para portales inmobiliarios. Sin dependencias, ~4 KB embebido, funciona en cualquier sitio con dos líneas de HTML.
 
-Sin dependencias. ~4 KB. Funciona en cualquier HTML con dos líneas.
+**[Ver demo →](https://luxbase.github.io/qualis-slider/)**
 
 ---
 
 ## Instalación
 
-Pegá el script una vez en el `<head>` de tu página:
+Agregá el script una vez en el `<head>`:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/luxbase/qualis-slider@latest/dist/widget.js"></script>
 ```
 
-Luego usá el div donde necesites el comparador:
+Luego colocá el comparador donde lo necesites:
 
 ```html
-<div class="qualis-slider"
-  data-before="URL_FOTO_ORIGINAL.jpg"
-  data-after="URL_FOTO_STAGING.jpg">
-</div>
+<div class="qualis-slider" data-before="original.jpg" data-after="staging.jpg"></div>
 ```
 
-Listo.
+El widget se inicializa automáticamente al cargar la página.
 
 ---
 
-## Modos
+## Modos de visualización
 
-### Slider vertical (default)
+### Slider (default)
 
-Arrastrá la barra para revelar la foto de staging.
+Arrastrá la barra divisoria para revelar la foto con staging.
 
 ```html
 <div class="qualis-slider"
-  data-before="antes.jpg"
-  data-after="despues.jpg"
+  data-before="original.jpg"
+  data-after="staging.jpg"
   data-label-before="Original"
   data-label-after="Staging"
   data-color="#1D9E75"
@@ -44,28 +50,28 @@ Arrastrá la barra para revelar la foto de staging.
 </div>
 ```
 
-### Fade / dissolve
+### Fade / Dissolve
 
-Deslizá el control para hacer crossfade entre las dos fotos.
+Control deslizante para transicionar entre ambas fotos.
 
 ```html
 <div class="qualis-slider"
   data-mode="fade"
-  data-before="antes.jpg"
-  data-after="despues.jpg"
+  data-before="original.jpg"
+  data-after="staging.jpg"
   data-color="#378ADD">
 </div>
 ```
 
-### Click toggle
+### Toggle
 
-Click / tap para alternar entre las dos fotos.
+Click o tap para alternar entre las dos imágenes al instante.
 
 ```html
 <div class="qualis-slider"
   data-mode="toggle"
-  data-before="antes.jpg"
-  data-after="despues.jpg"
+  data-before="original.jpg"
+  data-after="staging.jpg"
   data-color="#D85A30"
   data-icon="eye">
 </div>
@@ -77,17 +83,17 @@ Click / tap para alternar entre las dos fotos.
 
 | Atributo | Default | Descripción |
 |---|---|---|
-| `data-before` | — | URL de la foto original (requerido) |
-| `data-after` | — | URL de la foto con staging (requerido) |
+| `data-before` | — | URL de la foto original **(requerido)** |
+| `data-after` | — | URL de la foto con staging **(requerido)** |
 | `data-mode` | `slider` | `slider` · `fade` · `toggle` |
-| `data-label-before` | `Original` | Texto del label izquierdo / antes |
-| `data-label-after` | `Staging` | Texto del label derecho / después |
-| `data-color` | `#ffffff` | Color de la barra, handle y controles |
+| `data-label-before` | `Original` | Texto del label izquierdo |
+| `data-label-after` | `Staging` | Texto del label derecho |
+| `data-color` | `#ffffff` | Color de barra, handle y controles |
 | `data-icon` | `arrows` | `arrows` · `drag` · `eye` · `none` |
-| `data-ratio` | `0.6` | Relación alto/ancho (ej: `0.75` para 4:3) |
+| `data-ratio` | `0.6` | Relación de aspecto (ej: `0.75` para 4:3) |
 | `data-height` | — | Alto fijo en CSS (ej: `400px`). Reemplaza `data-ratio` |
 
-### Colores sugeridos
+### Paleta de colores sugerida
 
 | Color | Hex |
 |---|---|
@@ -100,41 +106,33 @@ Click / tap para alternar entre las dos fotos.
 
 ---
 
-## Múltiples sliders en la misma página
+## Múltiples sliders en una misma página
 
-El widget inicializa automáticamente todos los `.qualis-slider` del DOM. Podés tener tantos como necesites:
+El widget inicializa automáticamente todos los elementos con clase `.qualis-slider`. No hay límite de instancias:
 
 ```html
-<div class="qualis-slider" data-before="sala-antes.jpg" data-after="sala-despues.jpg"></div>
-<div class="qualis-slider" data-mode="fade" data-before="cocina-antes.jpg" data-after="cocina-despues.jpg"></div>
+<div class="qualis-slider" data-before="sala-original.jpg" data-after="sala-staging.jpg"></div>
+<div class="qualis-slider" data-mode="fade" data-before="cocina-original.jpg" data-after="cocina-staging.jpg"></div>
 ```
 
 ---
 
-## Versioning via jsDelivr
+## Versiones (jsDelivr)
 
-Para pinear una versión específica en producción:
+Para entornos productivos, se recomienda fijar una versión específica:
 
 ```html
-<!-- versión específica -->
+<!-- Versión específica (recomendado) -->
 <script src="https://cdn.jsdelivr.net/gh/luxbase/qualis-slider@1.0.0/dist/widget.js"></script>
 
-<!-- siempre la última -->
+<!-- Última versión disponible -->
 <script src="https://cdn.jsdelivr.net/gh/luxbase/qualis-slider@latest/dist/widget.js"></script>
 ```
 
 ---
 
-## Demo
+## Créditos y licencia
 
-[qualis-slider demo →](https://luxbase.github.io/qualis-slider/)
+Cada widget incluye un badge `qualis.studio` en la esquina inferior derecha. Agradecemos mantenerlo visible — es el único mecanismo que mantiene este widget gratuito y sostenible.
 
----
-
-## Créditos
-
-Cada widget incluye un pequeño badge `qualis.studio` en la esquina inferior derecha. Apreciamos que lo mantengas — es la única forma en que este widget es gratuito y sostenible.
-
----
-
-Hecho con ♥ por [Qualis Studio](https://qualis.studio) — Asunción, Paraguay.
+Desarrollado por [Qualis Studio](https://qualis.studio) — Asunción, Paraguay. Licencia MIT.
