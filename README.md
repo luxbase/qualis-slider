@@ -2,42 +2,48 @@
   <a href="https://luxbase.github.io/qualis-slider/">
     <img src="https://img.shields.io/badge/demo-live-1D9E75?style=flat-square" alt="Demo">
   </a>
-  <img src="https://img.badges.size.io/github/raw/luxbase/qualis-slider/main/dist/widget.js?style=flat-square&label=size&color=1D9E75" alt="Size">
+  <img src="https://img.shields.io/github/size/luxbase/qualis-slider/dist/widget.js?style=flat-square&label=size&color=1D9E75" alt="Size">
   <img src="https://img.shields.io/badge/dependencies-none-1D9E75?style=flat-square" alt="Dependencies">
   <img src="https://img.shields.io/npm/l/qualis-slider?style=flat-square&color=1D9E75" alt="License">
+  <img src="https://img.shields.io/badge/built%20with-vanilla%20js-F7DF1E?style=flat-square&logo=javascript&labelColor=1D9E75" alt="Vanilla JS">
 </p>
 
-# qualis-slider
+<h1 align="center">Qualis Slider</h1>
 
-Widget de comparación visual **Original vs. Staging** para portales inmobiliarios. Sin dependencias, ~4 KB embebido, funciona en cualquier sitio con dos líneas de HTML.
+<p align="center">
+  A lightweight, dependency-free **before & after** image comparison widget built for real estate portals. <br>
+  ~4 KB gzipped · Zero dependencies · Drop-in via two lines of HTML.
+</p>
 
-**[Ver demo →](https://luxbase.github.io/qualis-slider/)**
+<p align="center">
+  <a href="https://luxbase.github.io/qualis-slider/"><strong>Live demo →</strong></a>
+</p>
 
 ---
 
-## Instalación
+## Installation
 
-Agregá el script una vez en el `<head>`:
+Add the script once in your `<head>`:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/luxbase/qualis-slider@latest/dist/widget.js"></script>
 ```
 
-Luego colocá el comparador donde lo necesites:
+Then place the comparison widget anywhere on your page:
 
 ```html
 <div class="qualis-slider" data-before="original.jpg" data-after="staging.jpg"></div>
 ```
 
-El widget se inicializa automáticamente al cargar la página.
+The widget auto-initializes on DOMContentLoaded. No JavaScript setup required.
 
 ---
 
-## Modos de visualización
+## Display modes
 
 ### Slider (default)
 
-Arrastrá la barra divisoria para revelar la foto con staging.
+Drag the divider handle to reveal the staged photo interactively.
 
 ```html
 <div class="qualis-slider"
@@ -52,7 +58,7 @@ Arrastrá la barra divisoria para revelar la foto con staging.
 
 ### Fade / Dissolve
 
-Control deslizante para transicionar entre ambas fotos.
+A smooth crossfade slider between both images.
 
 ```html
 <div class="qualis-slider"
@@ -65,7 +71,7 @@ Control deslizante para transicionar entre ambas fotos.
 
 ### Toggle
 
-Click o tap para alternar entre las dos imágenes al instante.
+Click or tap to instantly swap between the two images.
 
 ```html
 <div class="qualis-slider"
@@ -79,60 +85,60 @@ Click o tap para alternar entre las dos imágenes al instante.
 
 ---
 
-## Opciones
+## Options
 
-| Atributo | Default | Descripción |
+| Attribute | Default | Description |
 |---|---|---|
-| `data-before` | — | URL de la foto original **(requerido)** |
-| `data-after` | — | URL de la foto con staging **(requerido)** |
+| `data-before` | — | URL of the original photo **(required)** |
+| `data-after` | — | URL of the staged photo **(required)** |
 | `data-mode` | `slider` | `slider` · `fade` · `toggle` |
-| `data-label-before` | `Original` | Texto del label izquierdo |
-| `data-label-after` | `Staging` | Texto del label derecho |
-| `data-color` | `#ffffff` | Color de barra, handle y controles |
+| `data-label-before` | `Original` | Left label text |
+| `data-label-after` | `Staging` | Right label text |
+| `data-color` | `#ffffff` | Handle, divider bar, and control accent color |
 | `data-icon` | `arrows` | `arrows` · `drag` · `eye` · `none` |
-| `data-ratio` | `0.6` | Relación de aspecto (ej: `0.75` para 4:3) |
-| `data-height` | — | Alto fijo en CSS (ej: `400px`). Reemplaza `data-ratio` |
+| `data-ratio` | `0.6` | Aspect ratio (e.g. `0.75` for 4:3) |
+| `data-height` | — | Fixed CSS height (e.g. `400px`). Overrides `data-ratio` |
 
-### Paleta de colores sugerida
+### Suggested color palette
 
 | Color | Hex |
 |---|---|
-| Verde Qualis | `#1D9E75` |
-| Azul | `#378ADD` |
+| Qualis Green | `#1D9E75` |
+| Blue | `#378ADD` |
 | Coral | `#D85A30` |
-| Ámbar | `#BA7517` |
-| Violeta | `#7F77DD` |
-| Blanco | `#ffffff` |
+| Amber | `#BA7517` |
+| Violet | `#7F77DD` |
+| White | `#ffffff` |
 
 ---
 
-## Múltiples sliders en una misma página
+## Multiple sliders on one page
 
-El widget inicializa automáticamente todos los elementos con clase `.qualis-slider`. No hay límite de instancias:
+Every element with the `.qualis-slider` class is auto-initialized. There is no instance limit:
 
 ```html
-<div class="qualis-slider" data-before="sala-original.jpg" data-after="sala-staging.jpg"></div>
-<div class="qualis-slider" data-mode="fade" data-before="cocina-original.jpg" data-after="cocina-staging.jpg"></div>
+<div class="qualis-slider" data-before="living-original.jpg" data-after="living-staging.jpg"></div>
+<div class="qualis-slider" data-mode="fade" data-before="kitchen-original.jpg" data-after="kitchen-staging.jpg"></div>
 ```
 
 ---
 
-## Versiones (jsDelivr)
+## Versioning (jsDelivr)
 
-Para entornos productivos, se recomienda fijar una versión específica:
+Pin a specific version for production environments:
 
 ```html
-<!-- Versión específica (recomendado) -->
+<!-- Specific version (recommended for production) -->
 <script src="https://cdn.jsdelivr.net/gh/luxbase/qualis-slider@1.0.0/dist/widget.js"></script>
 
-<!-- Última versión disponible -->
+<!-- Latest available version -->
 <script src="https://cdn.jsdelivr.net/gh/luxbase/qualis-slider@latest/dist/widget.js"></script>
 ```
 
 ---
 
-## Créditos y licencia
+## Credits & license
 
-Cada widget incluye un badge `qualis.studio` en la esquina inferior derecha. Agradecemos mantenerlo visible — es el único mecanismo que mantiene este widget gratuito y sostenible.
+Each widget includes a `qualis.studio` badge in the bottom-right corner. We appreciate keeping it visible — it's the only mechanism that keeps this widget free and sustainable.
 
-Desarrollado por [Qualis Studio](https://qualis.studio) — Asunción, Paraguay. Licencia MIT.
+Built by [Qualis Studio](https://qualis.studio) — Asunción, Paraguay. MIT License.
